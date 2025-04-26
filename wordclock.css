@@ -5,7 +5,7 @@ body {
   margin-right:         0px;
   margin-bottom:        0px;
   padding:              0px;
-  font-family:   "Major Mono Display", monospace;
+  font-family: "Ubuntu Mono", "Major Mono Display", monospace;
   font-weight:          400;
   font-style:        normal;
   font-size:          125px;
@@ -29,7 +29,7 @@ body {
   text-align:          left;
   height:             110px;
   width:               100%;
-  letter-spacing:   -0.08em;
+  letter-spacing:   0.18em;
 }
 
 #wordclock div div {
