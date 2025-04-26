@@ -20,39 +20,66 @@
  * @license    http://www.gnu.org/licenses/ GNU General Public License
  */
 
-var txt = "";
+var indoorTemp = "";
 
 
 
 $(document).ready(function() {
    updateTime();
    var timer = setInterval("updateTime()", 5000);
-   updateTemperature();
-   var timerTemp = setInterval("updateTemperature()", 300000);
+   updateIndoorTemperature();
+   var timerTemp = setInterval("updateIndoorTemperature()", 300000);
+   updateOutdoorTemperature();
+   var timerTemp = setInterval("updateOutdoorTemperature()", 300000);
 });
 
 
 
-function updateTemperature() {
+function updateIndoorTemperature() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      parseXML(this);
+      parseIndoorXML(this);
     }
   };
   xmlhttp.open("GET", "http://192.168.1.24:8080/rest/items/Temp_EG_Living", true);
   xmlhttp.send();
 }
 
-function parseXML(xml) {
+function parseIndoorXML(xml) {
   var x, i, xmlDoc;
   xmlDoc = xml.responseXML;
-  txt = "";
+  indoorTemp = "";
   x = xmlDoc.getElementsByTagName("state");
   for (i = 0; i< x.length; i++) {
-    txt += x[i].childNodes[0].nodeValue;
+    indoorTemp += x[i].childNodes[0].nodeValue;
   }
-  document.getElementById('indoorTemperature').innerText = txt;
+  document.getElementById('indoorTemperature').innerText = indoorTemp;
+}
+
+
+
+function updateOutdoorTemperature() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      parseOutdoorXML(this);
+    }
+  };
+  xmlhttp.open("GET", "http://192.168.1.24:8080/rest/items/Local_Temperature", true);
+  xmlhttp.send();
+}
+
+function parseOutdoorXML(xml) {
+  var x, i, xmlDoc;
+  xmlDoc = xml.responseXML;
+  outdoorTemp = "";
+  x = xmlDoc.getElementsByTagName("state");
+  for (i = 0; i< x.length; i++) {
+    outdoorTemp += x[i].childNodes[0].nodeValue;
+  }
+  outdoorTemp = outdoorTemp.slice(0, -1)
+  document.getElementById('outdoorTemperature').innerText = outdoorTemp;
 }
 
 
