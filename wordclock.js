@@ -19,12 +19,43 @@
  * @copyright  2011 Mike Quinn
  * @license    http://www.gnu.org/licenses/ GNU General Public License
  */
+
+var txt = "";
+
+
+
 $(document).ready(function() {
-   $('#wordclock>div div:first-child').css('text-align', 'left');
-   $('#wordclock>div div:last-child').css('text-align', 'right');
    updateTime();
    var timer = setInterval("updateTime()", 5000);
+   updateTemperature();
+   var timerTemp = setInterval("updateTemperature()", 300000);
 });
+
+
+
+function updateTemperature() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      parseXML(this);
+    }
+  };
+  xmlhttp.open("GET", "http://192.168.1.24:8080/rest/items/Temp_EG_Living", true);
+  xmlhttp.send();
+}
+
+function parseXML(xml) {
+  var x, i, xmlDoc;
+  xmlDoc = xml.responseXML;
+  txt = "";
+  x = xmlDoc.getElementsByTagName("state");
+  for (i = 0; i< x.length; i++) {
+    txt += x[i].childNodes[0].nodeValue;
+  }
+  document.getElementById('indoorTemperature').innerText = txt;
+}
+
+
 
 function updateTime(){
     $('#wordclock div div:not(#fanfare)').removeClass('active');
