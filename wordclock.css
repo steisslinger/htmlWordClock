@@ -1,44 +1,46 @@
 body {
-  background-color: #000;
-  margin-top:     0px;
-  margin-left:    0px;
-  margin-right:   0px;
-  margin-bottom:  0px;
-  padding:        0px;
-  font-family:    "Major Mono Display", monospace;
-  font-weight:    400;
-  font-style:  normal;
-  font-size:    125px;
-  line-height:  125px;
-  color:      #404040;
+  background-color:    #000;
+  margin-top:           0px;
+  margin-left:          0px;
+  margin-right:         0px;
+  margin-bottom:        0px;
+  padding:              0px;
+  font-family:   "Major Mono Display", monospace;
+  font-weight:          400;
+  font-style:        normal;
+  font-size:          125px;
+  line-height:        125px;
+  color:            #404040;
 }
 
 #wordclock {
-  margin: 0px 0px 0px 0px;
-  position:  absolute;
-  height:      1024px;
-  width:       1280px;
-  background-color: #000;
-  padding:        0px;
-  padding-left:  15px;
-  font-size:    1.0em;
+  margin:   0px 0px 0px 0px;
+  position:        absolute;
+  height:            1024px;
+  width:             1280px;
+  background-color:    #000;
+  padding:              0px;
+  padding-left:        15px;
+  font-size:          1.0em;
 }
 
 #wordclock div {
-  color:         #555; 
-  text-align:    left; 
-  height:       110px; 
-  width:         100%;
-  letter-spacing: -0.08em;
+  color:               #555;
+  text-align:          left;
+  height:             110px;
+  width:               100%;
+  letter-spacing:   -0.08em;
 }
 
 #wordclock div div {
-  padding:        0px;
-  float:         left;
+  padding:              0px;
+  float:               left;
 }
 
 .active {
-  font-weight: normal;
-  font-size: 1.0em;
-  color: white !important;
+  font-weight:       normal;
+  font-size:          1.0em;
+  color:   white !important;
+  transition:  opacity 0.5s ease-in-out;
+  opacity:                1;
 }

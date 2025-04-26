@@ -20,8 +20,6 @@
  * @license    http://www.gnu.org/licenses/ GNU General Public License
  */
 
-var indoorTemp = "";
-
 
 
 $(document).ready(function() {
@@ -78,8 +76,10 @@ function parseOutdoorXML(xml) {
   for (i = 0; i< x.length; i++) {
     outdoorTemp += x[i].childNodes[0].nodeValue;
   }
-  outdoorTemp = outdoorTemp.slice(0, -1)
-  document.getElementById('outdoorTemperature').innerText = outdoorTemp;
+  var outdoorTempFrac = outdoorTemp.slice(0, -1)
+  var outdoorTempInt  = outdoorTemp.slice(0, -1)
+  /* document.getElementById('outdoorTemperatureFrac').innerText = outdoorTempFrac; */
+  document.getElementById('outdoorTemperatureInt').innerText = outdoorTempInt;
 }
 
 
