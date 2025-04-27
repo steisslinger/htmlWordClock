@@ -54,6 +54,7 @@ function parseIndoorXML(xml) {
   for (i = 0; i< x.length; i++) {
     indoorTemp += x[i].childNodes[0].nodeValue;
   }
+  indoorTemp = indoorTemp.replace(".", "-");
   document.getElementById('indoorTemperature').innerText = indoorTemp;
 }
 
@@ -78,10 +79,10 @@ function parseOutdoorXML(xml) {
   for (i = 0; i< x.length; i++) {
     outdoorTemp += x[i].childNodes[0].nodeValue;
   }
-  var outdoorTempFrac = outdoorTemp.slice(0, -1)
-  var outdoorTempInt  = outdoorTemp.slice(0, -1)
-  /* document.getElementById('outdoorTemperatureFrac').innerText = outdoorTempFrac; */
-  document.getElementById('outdoorTemperatureInt').innerText = outdoorTempInt;
+  var outdoorTempFrac = outdoorTemp.slice(-2, -1)
+  var outdoorTempInt  = outdoorTemp.slice(-5, -3)
+  document.getElementById('outdoorTemperatureInt').innerText  = outdoorTempInt;
+  document.getElementById('outdoorTemperatureFrac').innerText = outdoorTempFrac;
 }
 
 
@@ -96,7 +97,7 @@ function updateTime(){
     var modMinute = Math.floor(minute / 5);
     var adjMinute = modMinute * 5;
     
-    if (adjMinute === 0){ 
+    if (adjMinute == 0){
         $('#oclock').addClass('active');
     } else if (adjMinute == 15) {
         modHour += 1;
@@ -144,16 +145,22 @@ function updateTime(){
     $('#hour-' + modHour + ".hour").addClass('active');
     
     switch (adjMinute) {
-    case 0:
-    case 15:
-    case 30:
-    case 45:
-        $('#minute').removeClass('active');
-        $('#past').removeClass('active');
-        break;
-    default:
-        // $('#minute').addClass('active');
+        case 0:
+        case 15:
+        case 30:
+        case 45:
+            $('#minute').removeClass('active');
+            $('#past').removeClass('active');
+            break;
+        default:
+         // $('#minute').addClass('active');
     }
     
     $('#min-' + adjMinute).addClass('active');
+
+    if (minute < 10){
+        document.getElementById('clockMinute').innerText = "0" + minute;
+    } else {
+        document.getElementById('clockMinute').innerText = minute;
+    }
 }

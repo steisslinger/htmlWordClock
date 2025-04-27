@@ -33,7 +33,8 @@ body {
 }
 
 #wordclock div div {
-  padding:              0px;
+  position:            relative;
+  padding:             0px;
   float:               left;
 }
 
