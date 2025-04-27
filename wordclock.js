@@ -23,6 +23,8 @@
 
 
 $(document).ready(function() {
+   // $('#wordclock>div div:first-child').css('text-align', 'left');
+   // $('#wordclock>div div:last-child').css('text-align', 'right');
    updateTime();
    var timer = setInterval("updateTime()", 5000);
    updateIndoorTemperature();
@@ -135,6 +137,10 @@ function updateTime(){
         $('#past').addClass('active');
     }
     
+    if (modHour == 0) {
+        modHour = 12;
+    }
+
     $('#hour-' + modHour + ".hour").addClass('active');
     
     switch (adjMinute) {

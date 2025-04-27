@@ -44,3 +44,9 @@ body {
   transition:  opacity 0.5s ease-in-out;
   opacity:                1;
 }
+
+.hide {
+  font-weight:       normal;
+  font-size:          1.0em;
+  color:   black !important;
+}
