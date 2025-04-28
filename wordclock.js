@@ -54,7 +54,7 @@ function parseIndoorXML(xml) {
   for (i = 0; i< x.length; i++) {
     indoorTemp += x[i].childNodes[0].nodeValue;
   }
-  indoorTemp = indoorTemp.replace(".", "-");
+  indoorTemp = indoorTemp.replace(".", "");
   document.getElementById('indoorTemperature').innerText = indoorTemp;
 }
 
@@ -79,10 +79,13 @@ function parseOutdoorXML(xml) {
   for (i = 0; i< x.length; i++) {
     outdoorTemp += x[i].childNodes[0].nodeValue;
   }
-  var outdoorTempFrac = outdoorTemp.slice(-2, -1)
-  var outdoorTempInt  = outdoorTemp.slice(-5, -3)
-  document.getElementById('outdoorTemperatureInt').innerText  = outdoorTempInt;
-  document.getElementById('outdoorTemperatureFrac').innerText = outdoorTempFrac;
+  outdoorTemp = outdoorTemp.slice(0, -1)
+  outdoorTemp = outdoorTemp.replace(".", "");
+  document.getElementById('outdoorTemperature').innerText = outdoorTemp;
+  //var outdoorTempFrac = outdoorTemp.slice(-2, -1)
+  //var outdoorTempInt  = outdoorTemp.slice(-5, -3)
+  //document.getElementById('outdoorTemperatureInt').innerText  = outdoorTempInt;
+  //document.getElementById('outdoorTemperatureFrac').innerText = outdoorTempFrac;
 }
 
 
