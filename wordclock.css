@@ -10,12 +10,10 @@ body {
   font-style:        normal;
   font-size:          125px;
   line-height:        125px;
-  color:            #404040;
 }
 
 #wordclock {
-  margin:   0px 0px 0px 0px;
-  position:        absolute;
+  margin:              auto;
   height:            1024px;
   width:             1280px;
   background-color:    #000;
@@ -25,7 +23,7 @@ body {
 }
 
 #wordclock div {
-  color:               #555;
+  color:               #333;
   text-align:          left;
   height:             110px;
   width:               100%;
@@ -33,21 +31,27 @@ body {
 }
 
 #wordclock div div {
-  position:            relative;
-  padding:             0px;
+  position:        relative;
   float:               left;
 }
 
 .active {
   font-weight:       normal;
   font-size:          1.0em;
-  color:   white !important;
-  transition:  opacity 0.5s ease-in-out;
-  opacity:                1;
+  color:       white !important;
+  transition:  color 2.0s ease-in-out;
 }
 
-.hide {
-  font-weight:       normal;
+.passive {
+  transition:  color 2.0s ease-in-out;
+}
+
+.out {
   font-size:          1.0em;
-  color:   black !important;
+  color:       aqua !important;
+}
+
+.in {
+  font-size:          1.0em;
+  color:       yellow !important;
 }

@@ -2,22 +2,6 @@
  * Defines the javascript for Wordclock
  *
  * This file is part of Wordclock.
- *
- * Wordclock is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Wordclock is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * @category   Wordclock
- * @package    Wordclock
- * @author     Mike Quinn <mikeqtoo@blueyonder.co.uk>
- * @copyright  2011 Mike Quinn
- * @license    http://www.gnu.org/licenses/ GNU General Public License
  */
 
 
@@ -79,19 +63,27 @@ function parseOutdoorXML(xml) {
   for (i = 0; i< x.length; i++) {
     outdoorTemp += x[i].childNodes[0].nodeValue;
   }
-  outdoorTemp = outdoorTemp.slice(0, -1)
-  outdoorTemp = outdoorTemp.replace(".", "");
-  document.getElementById('outdoorTemperature').innerText = outdoorTemp;
-  //var outdoorTempFrac = outdoorTemp.slice(-2, -1)
-  //var outdoorTempInt  = outdoorTemp.slice(-5, -3)
-  //document.getElementById('outdoorTemperatureInt').innerText  = outdoorTempInt;
-  //document.getElementById('outdoorTemperatureFrac').innerText = outdoorTempFrac;
+  var outdoorTempFrac = outdoorTemp.slice(-2, -1)
+  var outdoorTempInt1  = outdoorTemp.slice(-4, -3)
+  var outdoorTempInt2  = outdoorTemp.slice(-5, -4)
+  if (outdoorTempInt2 == "") {
+	  outdoorTempInt2 = "K";
+	  $('#wordclock div div:is(#outdoorTemperatureInt2)').removeClass('out');
+  } else {
+	  $('#wordclock div div:is(#outdoorTemperatureInt2)').addClass('out');
+  }
+  $('#wordclock div div:is(#outdoorTemperatureInt1)').addClass('out');
+  $('#wordclock div div:is(#outdoorTemperatureFrac)').addClass('out');
+
+  document.getElementById('outdoorTemperatureFrac').innerText = outdoorTempFrac;
+  document.getElementById('outdoorTemperatureInt1').innerText  = outdoorTempInt1;
+  document.getElementById('outdoorTemperatureInt2').innerText  = outdoorTempInt2;
 }
 
 
 
 function updateTime(){
-    $('#wordclock div div:not(#fanfare)').removeClass('active');
+    $('#wordclock div div:not(#fanfare)').removeClass('active').addClass('passive');
     
     var theTime = new Date();
     var hour = theTime.getHours();
@@ -146,6 +138,9 @@ function updateTime(){
     }
 
     $('#hour-' + modHour + ".hour").addClass('active');
+	if (modHour == 1 && adjMinute != 0) {
+		$('#hour-1s' + ".hour").addClass('active');
+	}
     
     switch (adjMinute) {
         case 0:
