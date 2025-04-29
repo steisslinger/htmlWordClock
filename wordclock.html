@@ -8,6 +8,14 @@
     <meta name="author" content="Frank Sautter-Steisslinger">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @font-face {
+            font-family: Mono;
+            src: url("mono/Mono.otf") format("opentype");
+        }
+        @font-face {
+            font-family: Oslo;
+            src: url("oslo/Oslo_II_Bold.ttf") format("truetype");
+        }
 	</style>
     <link rel="stylesheet" type="text/css" href="wordclock.css" />
 </head>
@@ -72,16 +80,14 @@
         <div>
             <div id="fanfare"                style="width: auto;">HANNAHI</div>
             <div id="indoorTemperature"      class="in" style="width: auto;">---</div>
+            <div id="fanfare"                class="in" style="position: relative; top: 0px; left: -100px; width: 0px;">.</div>
             <div id="fanfare"                style="width: auto;">O</div>
             <div id="outdoorTemperatureInt2" style="width: auto;">-</div>
             <div id="outdoorTemperatureInt1" style="width: auto;">-</div>
             <div id="outdoorTemperatureFrac" style="width: auto;">-</div>
+            <div id="fanfare"                class="out" style="position: relative; top: 0px; left: -100px; width: 0px;">.</div>
+            <div id="fanfare"                            style="position: relative; top: 0px; left:  -15px; width: 0px;">°</div>
             <div id="fanfare"                style="width: auto;">C</div>
-        </div>
-        <div>
-            <div class="in"                  style="position: relative; top: -112px; left: 723px">.</div>
-            <div class="out"                 style="position: relative; top: -224px; left: 1063px">.</div>
-            <div                             style="position: relative; top: -330px; left: 1160px">°</div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.7.min.js"></script>
