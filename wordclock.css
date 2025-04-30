@@ -2,17 +2,17 @@ body {
   background-color:    #333;
   margin-top:           0px;
   margin-left:          0px;
-  font-family: "Oslo", "Mono", "Ubuntu Mono", "Major Mono Display", monospace;
-  font-weight:       normal;
+  font-family:       "Mono", "Ubuntu Mono", "Major Mono Display", monospace;
+  font-weight:         bold;
   font-style:        normal;
   font-size:          107px;
 }
 
 #wordclock {
-  width:             1220px;
-  padding-left:        60px;
+  width:             1230px;
+  padding-left:        50px;
   height:            1160px;
-  padding-top:         30px;
+  padding-top:         20px;
   margin:              auto;
   background-color:    #000;
 }
@@ -21,7 +21,7 @@ body {
   color:            #575757;
   text-align:          left;
   height:             110px;
-  letter-spacing:     0.3em;
+  letter-spacing:     0.36em;
 }
 
 #wordclock div div {
@@ -29,7 +29,7 @@ body {
 }
 
 .active {
-  font-weight:       normal;
+  font-weight:       bold;
   color:       white !important;
   transition:  color 2.0s ease-in-out;
 }
