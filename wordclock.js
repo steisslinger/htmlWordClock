@@ -10,9 +10,9 @@ $(document).ready(function() {
    // $('#wordclock>div div:first-child').css('text-align', 'left');
    // $('#wordclock>div div:last-child').css('text-align', 'right');
    updateTime();
-   var timer = setInterval("updateTime()", 5000);
+   var timer     = setInterval("updateTime()", 5000);
    updateIndoorTemperature();
-   var timerTemp = setInterval("updateIndoorTemperature()", 300000);
+   var timerTemp = setInterval("updateIndoorTemperature()",  300000);
    updateOutdoorTemperature();
    var timerTemp = setInterval("updateOutdoorTemperature()", 300000);
 });
@@ -37,9 +37,23 @@ function parseIndoorXML(xml) {
   x = xmlDoc.getElementsByTagName("state");
   for (i = 0; i< x.length; i++) {
     indoorTemp += x[i].childNodes[0].nodeValue;
+    indoorTemp += "0";
   }
-  indoorTemp = indoorTemp.replace(".", "");
-  document.getElementById('indoorTemperature').innerText = indoorTemp;
+  var indoorTempFrac  = indoorTemp.slice(-2, -1)
+  var indoorTempInt1  = indoorTemp.slice(-4, -3)
+  var indoorTempInt2  = indoorTemp.slice(-5, -4)
+  if (indoorTempInt2 == "") {
+	  indoorTempInt2  = "K";
+	  $('#wordclock div div:is(#indoorTemperatureInt2)').removeClass('in');
+  } else {
+	  $('#wordclock div div:is(#indoorTemperatureInt2)').addClass('in');
+  }
+  $('#wordclock div div:is(#indoorTemperatureInt1)').addClass('in');
+  $('#wordclock div div:is(#indoorTemperatureFrac)').addClass('in');
+
+  document.getElementById('indoorTemperatureFrac').innerText = indoorTempFrac;
+  document.getElementById('indoorTemperatureInt1').innerText = indoorTempInt1;
+  document.getElementById('indoorTemperatureInt2').innerText = indoorTempInt2;
 }
 
 
@@ -63,11 +77,11 @@ function parseOutdoorXML(xml) {
   for (i = 0; i< x.length; i++) {
     outdoorTemp += x[i].childNodes[0].nodeValue;
   }
-  var outdoorTempFrac = outdoorTemp.slice(-2, -1)
+  var outdoorTempFrac  = outdoorTemp.slice(-2, -1)
   var outdoorTempInt1  = outdoorTemp.slice(-4, -3)
   var outdoorTempInt2  = outdoorTemp.slice(-5, -4)
   if (outdoorTempInt2 == "") {
-	  outdoorTempInt2 = "K";
+	  outdoorTempInt2  = "K";
 	  $('#wordclock div div:is(#outdoorTemperatureInt2)').removeClass('out');
   } else {
 	  $('#wordclock div div:is(#outdoorTemperatureInt2)').addClass('out');
@@ -76,8 +90,8 @@ function parseOutdoorXML(xml) {
   $('#wordclock div div:is(#outdoorTemperatureFrac)').addClass('out');
 
   document.getElementById('outdoorTemperatureFrac').innerText = outdoorTempFrac;
-  document.getElementById('outdoorTemperatureInt1').innerText  = outdoorTempInt1;
-  document.getElementById('outdoorTemperatureInt2').innerText  = outdoorTempInt2;
+  document.getElementById('outdoorTemperatureInt1').innerText = outdoorTempInt1;
+  document.getElementById('outdoorTemperatureInt2').innerText = outdoorTempInt2;
 }
 
 
@@ -156,9 +170,13 @@ function updateTime(){
     
     $('#min-' + adjMinute).addClass('active');
 
+    $('#wordclock div div:is(#clockMinute2)').addClass('mins');
+    $('#wordclock div div:is(#clockMinute1)').addClass('mins');
     if (minute < 10){
-        document.getElementById('clockMinute').innerText = "0" + minute;
+        document.getElementById('clockMinute2').innerText = "0"
+		document.getElementById('clockMinute1').innerText = minute
     } else {
-        document.getElementById('clockMinute').innerText = minute;
+        document.getElementById('clockMinute2').innerText = Math.floor(minute / 10);
+		document.getElementById('clockMinute1').innerText = minute - Math.floor(minute / 10)*10;
     }
 }

@@ -20,78 +20,85 @@
             font-family: Gabriele;
             src: url("gabriele/gabriele-bad.ttf") format("truetype");
         }
+        @font-face {
+            font-family: Bowhouse;
+            src: url("bowhouse.black.otf") format("opentype");
+        }
 	</style>
     <link rel="stylesheet" type="text/css" href="wordclock.css" />
 </head>
 <body>
     <div id="wordclock">
         <div>
-            <div id="fanfare" class="active" style="width: auto;">ES</div>
-            <div id="fanfare"                style="width: auto;">H</div>
-            <div id="fanfare" class="active" style="width: auto;">IST</div>
-            <div id="fanfare"                style="width: auto;">K</div>
-            <div id="min-5"   class="minute" style="width: auto;">FÜNF</div>
-            <div id="min-10"  class="minute" style="width: auto;">ZEHN</div>
+            <div id="fanfare" class="active" style="width: auto;"><span>E</span><span>S</span></div>
+            <div id="fanfare"                style="width: auto;"><span>H</span></div>
+            <div id="fanfare" class="active" style="width: auto;"><span>I</span><span>S</span><span>T</span></div>
+            <div id="fanfare"                style="width: auto;"><span>K</span></div>
+            <div id="min-5"   class="minute" style="width: auto;"><span>F</span><span>Ü</span><span>N</span><span>F</span></div>
+            <div id="min-10"  class="minute" style="width: auto;"><span>Z</span><span>E</span><span>H</span><span>N</span></div>
         </div>
         <div>
-            <div id="min-20"  class="minute" style="width: auto;">EVAZ</div>
-            <div id="min-45"  class="minute" style="width: auto;">DREI</div>
-            <div id="min-15"  class="minute" style="width: auto;">VIERTEL</div>
+            <div id="min-20"  class="minute" style="width: auto;"><span>E</span><span>V</span><span>A</span><span>Z</span></div>
+            <div id="min-45"  class="minute" style="width: auto;"><span>D</span><span>R</span><span>E</span><span>I</span></div>
+            <div id="min-15"  class="minute" style="width: auto;"><span>V</span><span>I</span><span>E</span><span>R</span><span>T</span><span>E</span><span>L</span></div>
         </div>
         <div>
-            <div id="fanfare"                style="width: auto;">B</div>
-            <div id="to"                     style="width: auto;">VOR</div>
-            <div id="fanfare"                style="width: auto;">KL</div>
-            <div id="past"                   style="width: auto;">NACH</div>
-            <div id="fanfare"                style="width: auto;">FRANK</div>
+            <div id="fanfare"                style="width: auto;"><span>B</span></div>
+            <div id="to"                     style="width: auto;"><span>V</span><span>O</span><span>R</span></div>
+            <div id="fanfare"                style="width: auto;"><span>K</span><span>L</span></div>
+            <div id="past"                   style="width: auto;"><span>N</span><span>A</span><span>C</span><span>H</span></div>
+            <div id="fanfare"                style="width: auto;"><span>F</span><span>R</span><span>A</span><span>N</span><span>K</span></div>
         </div>
         <div>
-            <div id="min-30"  class="minute" style="width: auto;">HALB</div>
-            <div id="fanfare"                style="width: auto;">P</div>
-            <div id="hour-1"  class="hour"   style="width: auto;">EIN</div>
-			<div id="hour-1s" class="hour"   style="width: auto;">S</div>
-            <div id="fanfare"                style="width: auto;">C</div>
-            <div id="hour-3"  class="hour"   style="width: auto;">DREI</div>
-            <div id="fanfare"                style="width: auto;">X</div>
+            <div id="min-30"  class="minute" style="width: auto;"><span>H</span><span>A</span><span>L</span><span>B</span></div>
+            <div id="fanfare"                style="width: auto;"><span>P</span></div>
+            <div id="hour-1"  class="hour"   style="width: auto;"><span>E</span><span>I</span><span>N</span></div>
+			<div id="hour-1s" class="hour"   style="width: auto;"><span>S</span></div>
+            <div id="fanfare"                style="width: auto;"><span>C</span></div>
+            <div id="hour-3"  class="hour"   style="width: auto;"><span>D</span><span>R</span><span>E</span><span>I</span></div>
+            <div id="fanfare"                style="width: auto;"><span>X</span></div>
         </div>
         <div>
-            <div id="fanfare"                style="width: auto;">U</div>
-            <div id="hour-2"  class="hour"   style="width: auto;">ZWEI</div>
-            <div id="hour-4"  class="hour"   style="width: auto;">VIER</div>
-            <div id="hour-5"  class="hour"   style="width: auto;">FÜNF</div>
-            <div id="hour-7"                 style="width: auto;">BW</div>
+            <div id="fanfare"                style="width: auto;"><span>U</span></div>
+            <div id="hour-2"  class="hour"   style="width: auto;"><span>Z</span><span>W</span><span>E</span><span>I</span></div>
+            <div id="hour-4"  class="hour"   style="width: auto;"><span>V</span><span>I</span><span>E</span><span>R</span></div>
+            <div id="hour-5"  class="hour"   style="width: auto;"><span>F</span><span>Ü</span><span>N</span><span>F</span></div>
+            <div id="hour-7"                 style="width: auto;"><span>B</span><span>H</span></div>
         </div>
         <div>
-            <div id="hour-6"  class="hour"   style="width: auto;">SECHS</div>
-            <div id="hour-7"  class="hour"   style="width: auto;">SIEBEN</div>
-            <div id="hour-8"  class="hour"   style="width: auto;">ACHT</div>
+            <div id="hour-6"  class="hour"   style="width: auto;"><span>S</span><span>E</span><span>C</span><span>H</span><span>S</span></div>
+			<div id="hour-8"  class="hour"   style="width: auto;"><span>A</span><span>C</span><span>H</span><span>T</span></div>
+            <div id="hour-7"  class="hour"   style="width: auto;"><span>S</span><span>I</span><span>E</span><span>B</span><span>E</span><span>N</span></div>
         </div>
         <div>
-            <div id="hour-9"  class="hour"   style="width: auto;">NEUN</div>
-            <div id="fanfare"                style="width: auto;">U</div>
-            <div id="hour-10" class="hour"   style="width: auto;">ZEHN</div>
-            <div id="hour-11" class="hour"   style="width: auto;">ELF</div>
-            <div id="fanfare"                style="width: auto;">R</div>
-            <div id="clockMinute"            style="width: auto;">CM</div>
+            <div id="hour-9"  class="hour"   style="width: auto;"><span>N</span><span>E</span><span>U</span><span>N</span></div>
+            <div id="fanfare"                style="width: auto;"><span>U</span></div>
+            <div id="hour-10" class="hour"   style="width: auto;"><span>Z</span><span>E</span><span>H</span><span>N</span></div>
+            <div id="hour-11" class="hour"   style="width: auto;"><span>E</span><span>L</span><span>F</span></div>
+            <div id="fanfare"                style="width: auto;"><span>R</span></div>
+            <div id="clockMinute2"           style="width: auto;"><span>C</span></div>
+			<div id="clockMinute1"           style="width: auto;"><span>P</span></div>
         </div>
         <div>
-            <div id="fanfare"                style="width: auto;">HEIKE</div>
-            <div id="hour-12" class="hour"   style="width: auto;">ZWÖLF</div>
-            <div id="fanfare"                style="width: auto;">H</div>
-            <div id="oclock"                 style="width: auto;">UHR</div>
-            <div id="fanfare"                style="width: auto;">O</div>
+            <div id="fanfare"                style="width: auto;"><span>H</span><span>E</span><span>I</span><span>K</span><span>E</span></div>
+            <div id="hour-12" class="hour"   style="width: auto;"><span>Z</span><span>W</span><span>Ö</span><span>L</span><span>F</span></div>
+            <div id="fanfare"                style="width: auto;"><span>H</span></div>
+            <div id="oclock"                 style="width: auto;"><span>U</span><span>H</span><span>R</span></div>
+            <div id="fanfare"                style="width: auto;"><span>O</span></div>
         </div>
         <div>
-            <div id="fanfare"                style="width: auto;">HANNAHI</div>
-            <div id="indoorTemperature"      class="in" style="width: auto;">---</div>
-            <div id="fanfare"                class="in" style="position: relative; top: 30px; left: -112px; width: 0px; font-size: 0.7em">.</div>
-            <div id="fanfare"                style="width: auto;">O</div>
-            <div id="outdoorTemperatureInt2" style="width: auto;">-</div>
-            <div id="outdoorTemperatureInt1" style="width: auto;">-</div>
-            <div id="outdoorTemperatureFrac" style="width: auto;">-</div>
-            <div id="fanfare"                class="out" style="position: relative; top:30px; left: -112px; width: 0px; font-size: 0.7em">.</div>
-            <div id="fanfare"                            style="position: relative; top: 0px; left:  -25px; width: 0px;">°</div>
-            <div id="fanfare"                style="width: auto;">C</div>
+            <div id="fanfare"                style="width: auto;"><span>H</span><span>A</span><span>N</span><span>N</span><span>A</span><span>H</span><span>I</span></div>
+            <div id="indoorTemperatureInt2"  style="width: auto;"><span>x</span></div>
+            <div id="indoorTemperatureInt1"  style="width: auto;"><span>x</span></div>
+            <div id="indoorTemperatureFrac"  style="width: auto;"><span>x</span></div>
+            <div id="fanfare"                class="in" style="position: relative; top:    0px; left: -102px; width: 0px;">.</div>
+            <div id="fanfare"                style="width: auto;"><span>O</span></div>
+            <div id="outdoorTemperatureInt2" style="width: auto;"><span>x</span></div>
+            <div id="outdoorTemperatureInt1" style="width: auto;"><span>x</span></div>
+            <div id="outdoorTemperatureFrac" style="width: auto;"><span>x</span></div>
+            <div id="fanfare"                class="out" style="position: relative; top:   0px; left: -102px; width: 0px;">.</div>
+            <div id="fanfare"                            style="position: relative; top: -15px; left:  -15px; width: 0px; font-size: 0.7em">o</div>
+            <div id="fanfare"                style="width: auto;"><span>C</span></div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.7.min.js"></script>
