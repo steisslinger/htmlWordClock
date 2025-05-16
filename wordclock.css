@@ -2,17 +2,17 @@ body {
   background-color:    #333;
   margin-top:           0px;
   margin-left:          0px;
-  font-family:   "Bowhouse", "Gabriele", "Ubuntu Mono", "Major Mono Display", monospace;
+  font-family:    "Bauhaus", "Bowhouse", "Gabriele", "Ubuntu Mono", "Major Mono Display", monospace;
   font-weight:       normal;
   font-style:        normal;
-  font-size:          120px;
+  font-size:           95px;
 }
 
 #wordclock {
   width:             1250px;
   padding-left:        30px;
-  height:            1070px;
-  padding-top:         20px;
+  height:            1055px;
+  padding-top:         25px;
   margin:              auto;
   background-color:    #000;
 }
@@ -30,7 +30,7 @@ body {
 }
 
 #wordclock div div span {
-  width:             0.69em;  /* fix width */
+  width:             0.86em;  /* fix width */
   text-align:        center;
   display:     inline-block;
 }
@@ -45,15 +45,15 @@ body {
 }
 
 .mins {
-  letter-spacing:   0.23em !important;
+  letter-spacing:   0.33em !important;
 }
 
 .out {
   color:              #5FF !important;
-  letter-spacing:   0.23em !important;
+  letter-spacing:   0.33em !important;
 }
 
 .in {
   color:              #FF5 !important;
-  letter-spacing:   0.23em !important;
+  letter-spacing:   0.33em !important;
 }
