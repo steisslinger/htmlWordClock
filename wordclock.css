@@ -5,7 +5,7 @@ body {
   font-family:   "NovaMono", "Bauhaus", "Bowhouse", "Gabriele", "Ubuntu Mono", "Major Mono Display", monospace;
   font-weight:       normal;
   font-style:        normal;
-  font-size:          119px;
+  font-size:          125px;
 }
 
 #wordclock {
@@ -20,7 +20,7 @@ body {
 #wordclock div {
   color:            #575757;
   text-align:          left;
-  height:             110px;
+  height:             109px;
 }
 
 #wordclock div div {
@@ -29,7 +29,7 @@ body {
 }
 
 #wordclock div div span {
-  width:             0.69em;  /* fix width */
+  width:             0.66em;  /* fix width */
   text-align:        center;
   display:     inline-block;
 }
