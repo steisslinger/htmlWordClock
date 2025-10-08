@@ -179,4 +179,47 @@ function updateTime(){
         document.getElementById('clockMinute2').innerText = Math.floor(minute / 10);
 		document.getElementById('clockMinute1').innerText = minute - Math.floor(minute / 10)*10;
     }
+
+
+    var guests = 0;
+    var eva    = 0;     var evaName    = "UTE";
+    var frank  = 1;     var frankName  = "FRANK";
+    var heike  = 1;     var heikeName  = "HEIKE";
+    var hannah = 0;     var hannahName = "HANNAH";
+
+    if (adjMinute == 0){
+        guests = 1;
+    }
+
+    if (guests){
+        if (eva){
+            $('#eva').addClass('eva');
+            document.getElementById('eva').innerText = evaName;
+        }
+        if (frank){
+            $('#frank').addClass('frank');
+            document.getElementById('frank').innerText = frankName;
+        }
+        if (heike){
+            $('#heike').addClass('heike');
+            document.getElementById('heike').innerText = heikeName;
+        }
+        if (hannah){
+            $('#hannah').addClass('hannah');
+            document.getElementById('hannah').innerText = hannahName;
+        }
+        $('#ha').addClass('hello');
+        document.getElementById('ha').innerText = "HA";
+
+        $('#l').addClass('hello');
+        document.getElementById('l').innerText = "L";
+
+        $('#lo').addClass('hello');
+        document.getElementById('lo').innerText = "LO";
+    } else {
+        $('#ha').addClass('active');
+        $('#lo').addClass('active');
+        $('#t').addClass('active');
+    }
+
 }

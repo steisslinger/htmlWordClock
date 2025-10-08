@@ -56,3 +56,35 @@ body {
   color:              #FF5 !important;
   letter-spacing:   0.33em !important;
 }
+
+
+
+.hello {
+  color:        lightgreen !important;
+  letter-spacing:     13px !important;
+  transition:  color 3.0s ease-in-out;
+}
+
+.eva {
+  color:        lightgreen !important;
+  letter-spacing:     13px !important;
+  transition:  color 3.0s ease-in-out;
+}
+
+.frank {
+  color:        lightgreen !important;
+  letter-spacing:     13px !important;
+  transition:  color 3.0s ease-in-out;
+}
+
+.hannah {
+  color:        lightgreen !important;
+  letter-spacing:     13px !important;
+  transition:  color 3.0s ease-in-out;
+}
+
+.heike {
+  color:        lightgreen !important;
+  letter-spacing:     13px !important;
+  transition:  color 3.0s ease-in-out;
+}
