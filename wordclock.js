@@ -6,6 +6,24 @@
 
 
 
+/* Guest handling */
+let timelyGuests = 1;
+let alwaysGuests = 0;
+
+let eva          = 0;
+let frank        = 1;
+let heike        = 1;
+let hannah       = 0;
+
+
+let showGuests   = 0;
+let evaName      = "EVA";
+let frankName    = "FRANK";
+let heikeName    = "HEIKE";
+let hannahName   = "HANNAH";
+
+
+
 $(document).ready(function() {
    // $('#wordclock>div div:first-child').css('text-align', 'left');
    // $('#wordclock>div div:last-child').css('text-align', 'right');
@@ -105,6 +123,7 @@ function updateTime(){
     var modHour = hour % 12;
     var modMinute = Math.floor(minute / 5);
     var adjMinute = modMinute * 5;
+    var fiveMinutes = adjMinute;
     
     if (adjMinute == 0){
         $('#oclock').addClass('active');
@@ -152,10 +171,10 @@ function updateTime(){
     }
 
     $('#hour-' + modHour + ".hour").addClass('active');
-	if (modHour == 1 && adjMinute != 0) {
-		$('#hour-1s' + ".hour").addClass('active');
-	}
-    
+    if (modHour == 1 && adjMinute != 0) {
+        $('#hour-1s' + ".hour").addClass('active');
+    }
+
     switch (adjMinute) {
         case 0:
         case 15:
@@ -174,24 +193,21 @@ function updateTime(){
     $('#wordclock div div:is(#clockMinute1)').addClass('mins');
     if (minute < 10){
         document.getElementById('clockMinute2').innerText = "0"
-		document.getElementById('clockMinute1').innerText = minute
+        document.getElementById('clockMinute1').innerText = minute
     } else {
         document.getElementById('clockMinute2').innerText = Math.floor(minute / 10);
-		document.getElementById('clockMinute1').innerText = minute - Math.floor(minute / 10)*10;
+        document.getElementById('clockMinute1').innerText = minute - Math.floor(minute / 10)*10;
     }
 
 
-    var guests = 0;
-    var eva    = 0;     var evaName    = "UTE";
-    var frank  = 1;     var frankName  = "FRANK";
-    var heike  = 1;     var heikeName  = "HEIKE";
-    var hannah = 0;     var hannahName = "HANNAH";
-
-    if (adjMinute == 0){
-        guests = 1;
+    /* Guest handling */
+    if (timelyGuests && (fiveMinutes == 0 || fiveMinutes == 10 || fiveMinutes == 20 || fiveMinutes == 30 || fiveMinutes == 40 || fiveMinutes == 50)){
+        showGuests = 1;
+    } else if (showGuests == 1){
+        window.location.reload();
     }
 
-    if (guests){
+    if (showGuests || alwaysGuests){
         if (eva){
             $('#eva').addClass('eva');
             document.getElementById('eva').innerText = evaName;
@@ -208,13 +224,12 @@ function updateTime(){
             $('#hannah').addClass('hannah');
             document.getElementById('hannah').innerText = hannahName;
         }
-        $('#ha').addClass('hello');
-        document.getElementById('ha').innerText = "HA";
 
+        $('#ha').addClass('hl');
+        document.getElementById('ha').innerText = "HA";
         $('#l').addClass('hello');
         document.getElementById('l').innerText = "L";
-
-        $('#lo').addClass('hello');
+        $('#lo').addClass('hl');
         document.getElementById('lo').innerText = "LO";
     } else {
         $('#ha').addClass('active');

@@ -61,30 +61,42 @@ body {
 
 .hello {
   color:        lightgreen !important;
-  letter-spacing:     13px !important;
+  letter-spacing:     10px !important;
   transition:  color 3.0s ease-in-out;
 }
 
+.hl {
+  color:        lightgreen !important;
+  padding-left:        6px;
+  letter-spacing:     10px !important;
+  transition:  color 3.0s ease-in-out;
+}
+
+
 .eva {
   color:        lightgreen !important;
-  letter-spacing:     13px !important;
+  padding-left:        6px;            /* Default:  6px */
+  letter-spacing:     11px !important; /* Default: 11px */
   transition:  color 3.0s ease-in-out;
 }
 
 .frank {
   color:        lightgreen !important;
-  letter-spacing:     13px !important;
-  transition:  color 3.0s ease-in-out;
-}
-
-.hannah {
-  color:        lightgreen !important;
-  letter-spacing:     13px !important;
+  padding-left:        6px;            /* Default:  6px */
+  letter-spacing:     12px !important; /* Default: 12px */
   transition:  color 3.0s ease-in-out;
 }
 
 .heike {
   color:        lightgreen !important;
-  letter-spacing:     13px !important;
+  padding-left:        6px;            /* Default:  6px */
+  letter-spacing:     11px !important; /* Default: 11px */
+  transition:  color 3.0s ease-in-out;
+}
+
+.hannah {
+  color:        lightgreen !important;
+  padding-left:        6px;            /* Default:  6px */
+  letter-spacing:     11px !important; /* Default: 11px */
   transition:  color 3.0s ease-in-out;
 }
