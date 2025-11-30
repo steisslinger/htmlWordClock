@@ -7,21 +7,37 @@
 
 
 /* Guest handling */
-let timelyGuests = 1;
-let alwaysGuests = 0;
-
-let eva          = 0;
-let frank        = 1;
-let heike        = 1;
-let hannah       = 0;
+let timelyGuests        = 1;
+let alwaysGuests1       = 0;
+let alwaysGuests2       = 0;
 
 
-let showGuests   = 0;
-let evaName      = "EVA";
-let frankName    = "FRANK";
-let heikeName    = "HEIKE";
-let hannahName   = "HANNAH";
+let eva1                = 0;
+let frank1              = 0;
+let heike1              = 0;
+let hannah1             = 0;
 
+let eva2                = 0;
+let frank2              = 0;
+let heike2              = 0;
+let hannah2             = 0;
+
+let evaNameDefault      = "EVA";
+let frankNameDefault    = "FRANK";
+let heikeNameDefault    = "HEIKE";
+let hannahNameDefault   = "HANNAH";
+
+let showGuests1         = 0;
+let evaName1            = "ANDI";
+let frankName1          = "SVEN";
+let heikeName1          = "ROMAN";
+let hannahName1         = "KATHRIN";
+
+let showGuests2         = 0;
+let evaName2            = "ROLF";
+let frankName2          = "HANNES";
+let heikeName2          = "HEIKE";
+let hannahName2         = "SIBYLLE";
 
 
 $(document).ready(function() {
@@ -202,35 +218,111 @@ function updateTime(){
 
     /* Guest handling */
     if (timelyGuests && (fiveMinutes == 0 || fiveMinutes == 10 || fiveMinutes == 20 || fiveMinutes == 30 || fiveMinutes == 40 || fiveMinutes == 50)){
-        showGuests = 1;
-    } else if (showGuests == 1){
-        window.location.reload();
+        showGuests1 = 1;
+        showGuests2 = 0;
+    //} else if (showGuests == 1){
+    //    window.location.reload();
+    } else if (timelyGuests){
+        showGuests1 = 0;
+        showGuests2 = 1;
     }
 
-    if (showGuests || alwaysGuests){
-        if (eva){
-            $('#eva').addClass('eva');
-            document.getElementById('eva').innerText = evaName;
+    if (showGuests1 || alwaysGuests1){
+        if (eva1){
+            $('#eva').removeClass('evaDefault').addClass('eva');
+            document.getElementById('eva').innerText = evaName1;
+        } else {
+            $('#eva').removeClass('eva').addClass('evaDefault');
+            document.getElementById('eva').innerText = evaNameDefault;
         }
-        if (frank){
-            $('#frank').addClass('frank');
-            document.getElementById('frank').innerText = frankName;
+        if (frank1){
+            $('#frank').removeClass('frankDefault').removeClass('frank2').addClass('frank1');
+            document.getElementById('frank').innerText = frankName1;
+        } else {
+            $('#frank').removeClass('frank1').removeClass('frank2').addClass('frankDefault');
+            document.getElementById('frank').innerText = frankNameDefault;
         }
-        if (heike){
-            $('#heike').addClass('heike');
-            document.getElementById('heike').innerText = heikeName;
+        if (heike1){
+            $('#heike').removeClass('heikeDefault').addClass('heike');
+            document.getElementById('heike').innerText = heikeName1;
+        } else {
+            $('#heike').removeClass('heike').addClass('heikeDefault');
+            document.getElementById('heike').innerText = heikeNameDefault;
         }
-        if (hannah){
-            $('#hannah').addClass('hannah');
-            document.getElementById('hannah').innerText = hannahName;
+        if (hannah1){
+            $('#hannah').removeClass('hannahDefault').addClass('hannah');
+            document.getElementById('hannah').innerText = hannahName1;
+        } else {
+            $('#hannah').removeClass('hannah').addClass('hannahDefault');
+            document.getElementById('hannah').innerText = hannahNameDefault;
         }
 
-        $('#ha').addClass('hl');
-        document.getElementById('ha').innerText = "HA";
-        $('#l').addClass('hello');
-        document.getElementById('l').innerText = "L";
-        $('#lo').addClass('hl');
-        document.getElementById('lo').innerText = "LO";
+        if (eva1 || frank1 || heike1 || hannah1) {
+            $('#ha').removeClass('active').addClass('hl');
+            document.getElementById('ha').innerText = "HA";
+            $('#l').addClass('hello');
+            document.getElementById('l').innerText = "L";
+            $('#lo').removeClass('active').addClass('hl');
+            document.getElementById('lo').innerText = "LO";
+            $('#t').removeClass('active');
+        } else {
+            $('#ha').removeClass('hl').addClass('active');
+            document.getElementById('ha').innerText = "ES";
+            $('#l').removeClass('hello');
+            document.getElementById('l').innerText = "H";
+            $('#lo').removeClass('hl').addClass('active');
+            document.getElementById('lo').innerText = "IS";
+            $('#t').addClass('active');
+        }
+
+    } else if (showGuests2 || alwaysGuests2){
+        if (eva2){
+            $('#eva').removeClass('evaDefault').addClass('eva')
+            document.getElementById('eva').innerText = evaName2;
+        } else {
+            $('#eva').removeClass('eva').addClass('evaDefault');
+            document.getElementById('eva').innerText = evaNameDefault;
+        }
+        if (frank2){
+            $('#frank').removeClass('frankDefault').removeClass('frank1').addClass('frank2');
+            document.getElementById('frank').innerText = frankName2;
+        } else {
+            $('#frank').removeClass('frank1').removeClass('frank2').addClass('frankDefault');
+            document.getElementById('frank').innerText = frankNameDefault;
+        }
+        if (heike2){
+            $('#heike').removeClass('heikeDefault').addClass('heike')
+            document.getElementById('heike').innerText = heikeName2;
+        } else {
+            $('#heike').removeClass('heike').addClass('heikeDefault')
+            document.getElementById('heike').innerText = heikeNameDefault;
+        }
+        if (hannah2){
+            $('#hannah').removeClass('hannahDefault').addClass('hannah');
+            document.getElementById('hannah').innerText = hannahName2;
+        } else {
+            $('#hannah').removeClass('hannah').addClass('hannahDefault');
+            document.getElementById('hannah').innerText = hannahNameDefault;
+        }
+
+        if (eva2 || frank2 || heike2 || hannah2) {
+            $('#ha').removeClass('active').addClass('hl');
+            document.getElementById('ha').innerText = "HA";
+            $('#l').addClass('hello');
+            document.getElementById('l').innerText = "L";
+            $('#lo').removeClass('active').addClass('hl');
+            document.getElementById('lo').innerText = "LO";
+            $('#t').removeClass('active');
+        } else {
+            $('#ha').removeClass('hl').addClass('active');
+            document.getElementById('ha').innerText = "ES";
+            $('#l').removeClass('hello');
+            document.getElementById('l').innerText = "H";
+            $('#lo').removeClass('hl').addClass('active');
+            document.getElementById('lo').innerText = "IS";
+            $('#t').addClass('active');
+        }
+
     } else {
         $('#ha').addClass('active');
         $('#lo').addClass('active');

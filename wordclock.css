@@ -36,6 +36,8 @@ body {
 
 .active {
   color:             white !important;
+  padding-left:        6px;
+  letter-spacing:     10px !important;
   transition:  color 3.0s ease-in-out;
 }
 
@@ -61,6 +63,7 @@ body {
 
 .hello {
   color:        lightgreen !important;
+  padding-left:        6px;
   letter-spacing:     10px !important;
   transition:  color 3.0s ease-in-out;
 }
@@ -73,22 +76,53 @@ body {
 }
 
 
-.eva {
-  color:        lightgreen !important;
+.evaDefault {
   padding-left:        6px;            /* Default:  6px */
   letter-spacing:     11px !important; /* Default: 11px */
   transition:  color 3.0s ease-in-out;
 }
 
-.frank {
+.eva {
   color:        lightgreen !important;
+  padding-left:        6px;            /* Default:  6px */
+  letter-spacing:     -10px !important; /* Default: 11px */ /* 4 Letter: -10px */
+  transition:  color 3.0s ease-in-out;
+}
+
+.frankDefault {
   padding-left:        6px;            /* Default:  6px */
   letter-spacing:     12px !important; /* Default: 12px */
   transition:  color 3.0s ease-in-out;
 }
 
+.frank1 {
+  color:        lightgreen !important;
+  padding-left:        6px;            /* Default:  6px */
+  letter-spacing:     12px !important; /* Default: 12px */ /* 6 Letter: -5px */
+  transition:  color 3.0s ease-in-out;
+}
+
+.frank2 {
+  color:        lightgreen !important;
+  padding-left:        6px;            /* Default:  6px */
+  letter-spacing:     -5px !important; /* Default: 12px */ /* 6 Letter: -5px */
+  transition:  color 3.0s ease-in-out;
+}
+
+.heikeDefault {
+  padding-left:        8px;            /* Default:  8px */
+  letter-spacing:     11px !important; /* Default: 11px */
+  transition:  color 3.0s ease-in-out;
+}
+
 .heike {
   color:        lightgreen !important;
+  padding-left:        8px;            /* Default:  8px */
+  letter-spacing:     11px !important; /* Default: 11px */ /* 6 Letter: -6px */
+  transition:  color 3.0s ease-in-out;
+}
+
+.hannahDefault {
   padding-left:        6px;            /* Default:  6px */
   letter-spacing:     11px !important; /* Default: 11px */
   transition:  color 3.0s ease-in-out;
@@ -97,6 +131,6 @@ body {
 .hannah {
   color:        lightgreen !important;
   padding-left:        6px;            /* Default:  6px */
-  letter-spacing:     11px !important; /* Default: 11px */
+  letter-spacing:     -1px !important; /* Default: 11px */ /* 7 Letter: -1px */ /* 8 Letter: -6px */
   transition:  color 3.0s ease-in-out;
 }
