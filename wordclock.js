@@ -41,8 +41,6 @@ let hannahName2         = "SIBYLLE";
 
 
 $(document).ready(function() {
-   // $('#wordclock>div div:first-child').css('text-align', 'left');
-   // $('#wordclock>div div:last-child').css('text-align', 'right');
    updateTime();
    var timer     = setInterval("updateTime()", 5000);
    updateIndoorTemperature();
@@ -131,7 +129,7 @@ function parseOutdoorXML(xml) {
 
 
 function updateTime(){
-    $('#wordclock div div:not(#fanfare)').removeClass('active').addClass('passive');
+    $('#wordclock div:not(#fanfare)').removeClass('active').addClass('passive');
     
     var theTime = new Date();
     var hour = theTime.getHours();
@@ -198,8 +196,8 @@ function updateTime(){
         case 15:
         case 30:
         case 45:
-            $('[id^="min-"]').removeClass('active');
-            $('[id^="past-"]').removeClass('active');
+            // $('[id^="min-"]').removeClass('active');
+            // $('[id^="past-"]').removeClass('active');
             break;
         default:
          // $('#minute').addClass('active');
