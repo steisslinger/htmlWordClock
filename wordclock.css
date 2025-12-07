@@ -1,35 +1,60 @@
 body {
   background-color:    #333;
-  margin-top:         -10px;
+  margin-top:           0px;
   margin-left:          0px;
   font-family:   "NovaMono", "Bauhaus", "Bowhouse", "Gabriele", "Ubuntu Mono", "Major Mono Display", monospace;
   font-weight:       normal;
   font-style:        normal;
-  font-size:          125px;
+  font-size:          127px;
+}
+
+
+.letter {
+  color:            #575757;
+  display:             flex;
+  align-items:       center;
+  justify-content:   center;
+  font-size:          1.0em;
+}
+
+.minute {
+  color: #575757;
+}
+
+.hour {
+  color: #575757;
+}
+
+.hero {
+  color: white;
 }
 
 #wordclock {
-  width:             1260px;
+  width:             1240px;
   padding-left:        20px;
-  height:            1050px;
-  padding-top:          0px;
+  padding-right:       20px;
+  height:            1000px;
+  padding-top:         40px;
   margin:              auto;
   background-color:    #000;
+  display:             grid;
+  grid-template-columns: repeat(15, 0.37em); /* Anzahl Spalten anpassen */
+  grid-auto-rows:    0.57em;                 /* Einheitliche Höhe */
+  gap:               0.29em;                 /* Abstand zwischen den Buchstaben */
+  justify-content:   center;
+  position:        relative;                 /* Wichtig für absolute Positionierung */
 }
 
 #wordclock div {
-  color:            #575757;
-  text-align:          left;
-  height:             109px;
+  /* height:             159px; */
 }
 
 #wordclock div div {
-  display:             flex;
-  float:               left;
+
 }
 
 #wordclock div div span {
-  width:             0.66em;  /* fix width */
+  width:             0.98em;  /* fix width */
   text-align:        center;
   display:     inline-block;
 }
@@ -44,15 +69,14 @@ body {
 }
 
 .mins {
-  letter-spacing:   0.33em !important;
+  color:              white !important;
 }
 
 .out {
   color:              #5FF !important;
-  letter-spacing:   0.33em !important;
 }
 
 .in {
   color:              #FF5 !important;
-  letter-spacing:   0.33em !important;
 }
+
