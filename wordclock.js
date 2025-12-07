@@ -198,7 +198,7 @@ function updateTime(){
         case 15:
         case 30:
         case 45:
-            // $('[id^="min-"]').removeClass('active');
+            $('[id^="min-"]').removeClass('active');
             $('[id^="past-"]').removeClass('active');
             break;
         default:
