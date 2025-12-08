@@ -69,14 +69,14 @@ body {
 
 .eva1 {
   color:              lightgreen;
-  letter-spacing:     14px;
-  padding-left:       110px;
+  letter-spacing:     13px;
+  padding-left:       115px;
 }
 
 .eva2 {
   color:              lightgreen;
-  letter-spacing:     14px;
-  padding-left:       110px;
+  letter-spacing:     13px;
+  padding-left:       115px;
 }
 
 .frank1 {
@@ -117,4 +117,5 @@ body {
 
 .hello {
   color:              lightgreen;
+  transition:         color 3.0s ease-in-out;
 }

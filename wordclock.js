@@ -239,21 +239,25 @@ function updateTime(){
         updateGuest('hannah', hannah1, 'hannah1', hannahName1, ['H', 'A', 'N', 'N', 'A', 'H']);
 
         if (eva1 || frank1 || heike1 || hannah1) {
-            document.getElementById('hero-e').innerText = "H";
-            document.getElementById('hero-s1').innerText = "A";
-            document.getElementById('hero-h').innerText = "L";
-            document.getElementById('hero-i').innerText = "L";
-            document.getElementById('hero-s2').innerText = "O";
+            document.getElementById('hero-e').innerText = "S";
+            document.getElementById('hero-s1').innerText = "C";
+            document.getElementById('hero-h').innerText = "H";
+            document.getElementById('hero-i').innerText = "A";
+            document.getElementById('hero-s2').innerText = "L";
+            document.getElementById('hero-t').innerText = "O";
+            document.getElementById('hero-k').innerText = "M";
             $('[id^="hero-"]').addClass('hello');
-            $('#hero-t').removeClass('hello').removeClass('active');
         } else {
             document.getElementById('hero-e').innerText = "E";
             document.getElementById('hero-s1').innerText = "S";
             document.getElementById('hero-h').innerText = "H";
             document.getElementById('hero-i').innerText = "I";
             document.getElementById('hero-s2').innerText = "S";
+            document.getElementById('hero-t').innerText = "T";
+            document.getElementById('hero-k').innerText = "K";
             $('[id^="hero-"]').addClass('active');
             $('#hero-h').removeClass('active').removeClass('hello');
+            $('#hero-k').removeClass('active').removeClass('hello');
         }
 
     } else if (showGuests2 || alwaysGuests2) {
@@ -263,21 +267,25 @@ function updateTime(){
         updateGuest('hannah', hannah2, 'hannah2', hannahName2, ['H', 'A', 'N', 'N', 'A', 'H']);
 
         if (eva2 || frank2 || heike2 || hannah2) {
-            document.getElementById('hero-e').innerText = "H";
-            document.getElementById('hero-s1').innerText = "A";
-            document.getElementById('hero-h').innerText = "L";
-            document.getElementById('hero-i').innerText = "L";
-            document.getElementById('hero-s2').innerText = "O";
+            document.getElementById('hero-e').innerText = "S";
+            document.getElementById('hero-s1').innerText = "C";
+            document.getElementById('hero-h').innerText = "H";
+            document.getElementById('hero-i').innerText = "A";
+            document.getElementById('hero-s2').innerText = "L";
+            document.getElementById('hero-t').innerText = "O";
+            document.getElementById('hero-k').innerText = "M";
             $('[id^="hero-"]').addClass('hello');
-            $('#hero-t').removeClass('hello').removeClass('active');
         } else {
             document.getElementById('hero-e').innerText = "E";
             document.getElementById('hero-s1').innerText = "S";
             document.getElementById('hero-h').innerText = "H";
             document.getElementById('hero-i').innerText = "I";
             document.getElementById('hero-s2').innerText = "S";
+            document.getElementById('hero-t').innerText = "T";
+            document.getElementById('hero-k').innerText = "K";
             $('[id^="hero-"]').addClass('active');
             $('#hero-h').removeClass('active').removeClass('hello');
+            $('#hero-k').removeClass('active').removeClass('hello');
         }
 
     } else {        
