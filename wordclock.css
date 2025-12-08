@@ -8,21 +8,12 @@ body {
   font-size:          127px;
 }
 
-
 .letter {
   color:            #575757;
   display:             flex;
   align-items:       center;
   justify-content:   center;
   font-size:          1.0em;
-}
-
-.minute {
-  color: #575757;
-}
-
-.hour {
-  color: #575757;
 }
 
 .hero {
@@ -33,7 +24,7 @@ body {
   width:             1240px;
   padding-left:        20px;
   padding-right:       20px;
-  height:            1000px;
+  height:             984px;
   padding-top:         40px;
   margin:              auto;
   background-color:    #000;
@@ -47,10 +38,6 @@ body {
 
 #wordclock div {
   /* height:             159px; */
-}
-
-#wordclock div div {
-
 }
 
 #wordclock div div span {
@@ -69,7 +56,7 @@ body {
 }
 
 .mins {
-  color:              grey !important;
+  color:              #575757 !important;
 }
 
 .out {
@@ -80,3 +67,54 @@ body {
   color:              #FF5 !important;
 }
 
+.eva1 {
+  color:              lightgreen;
+  letter-spacing:     13px;
+  padding-left:       115px;
+}
+
+.eva2 {
+  color:              lightgreen;
+  letter-spacing:     13px;
+  padding-left:       115px;
+}
+
+.frank1 {
+  color:              lightgreen;
+  letter-spacing:     13px;
+  padding-left:       197px;
+}
+
+.frank2 {
+  color:              lightgreen;
+  letter-spacing:     13px;
+  padding-left:       197px;
+}
+
+.heike1 {
+  color:              lightgreen;
+  letter-spacing:     13px;
+  padding-left:       197px;
+}
+
+.heike2 {
+  color:              lightgreen;
+  letter-spacing:     13px;
+  padding-left:       197px;
+}
+
+.hannah1 {
+  color:              lightgreen;
+  letter-spacing:     13px;
+  padding-left:       240px;
+}
+
+.hannah2 {
+  color:              lightgreen;
+  letter-spacing:     13px;
+  padding-left:       240px;
+}
+
+.hello {
+  color:              lightgreen;
+}
