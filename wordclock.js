@@ -12,15 +12,15 @@ let alwaysGuests1       = 0;
 let alwaysGuests2       = 0;
 
 
-let eva1                = 1;
-let frank1              = 1;
-let heike1              = 1;
-let hannah1             = 1;
+let eva1                = 0;
+let frank1              = 0;
+let heike1              = 0;
+let hannah1             = 0;
 
 let eva2                = 0;
-let frank2              = 0;
+let frank2              = 1;
 let heike2              = 0;
-let hannah2             = 0;
+let hannah2             = 1;
 
 
 let evaName1            = "EVA";
@@ -29,9 +29,9 @@ let heikeName1          = "HEIKE";
 let hannahName1         = "HANNAH";
 
 let evaName2            = "EVA";
-let frankName2          = "FRANK";
+let frankName2          = "MICHAEL";
 let heikeName2          = "HEIKE";
-let hannahName2         = "HANNAH";
+let hannahName2         = "ALBRECHT";
 
 
 let showGuests1         = 0;
