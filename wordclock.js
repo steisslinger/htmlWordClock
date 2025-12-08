@@ -7,7 +7,7 @@
 
 
 /* Guest handling */
-let timelyGuests        = 1;
+let timelyGuests        = 0;
 let alwaysGuests1       = 0;
 let alwaysGuests2       = 0;
 
@@ -291,6 +291,7 @@ function updateTime(){
     } else {        
         $('[id^="hero-"]').addClass('active');
         $('#hero-h').removeClass('active');
+        $('#hero-k').removeClass('active');
     }
 
 }
