@@ -12,26 +12,26 @@ let alwaysGuests1       = 0;
 let alwaysGuests2       = 0;
 
 
-let eva1                = 0;
-let frank1              = 0;
+let eva1                = 1;
+let frank1              = 1;
 let heike1              = 0;
 let hannah1             = 0;
 
 let eva2                = 0;
-let frank2              = 1;
+let frank2              = 0;
 let heike2              = 0;
-let hannah2             = 1;
+let hannah2             = 0;
 
 
-let evaName1            = "EVA";
-let frankName1          = "FRANK";
-let heikeName1          = "HEIKE";
+let evaName1            = "DORO";
+let frankName1          = "ROMAN";
+let heikeName1          = "ROMAN";
 let hannahName1         = "HANNAH";
 
-let evaName2            = "EVA";
-let frankName2          = "MICHAEL";
-let heikeName2          = "HEIKE";
-let hannahName2         = "ALBRECHT";
+let evaName2            = "HEIKE";
+let frankName2          = "FRANK";
+let heikeName2          = "HANNAH";
+let hannahName2         = "JONATHAN";
 
 
 let showGuests1         = 0;
@@ -109,6 +109,15 @@ function parseOutdoorXML(xml) {
   var outdoorTempFrac  = outdoorTemp.slice(-2, -1)
   var outdoorTempInt1  = outdoorTemp.slice(-4, -3)
   var outdoorTempInt2  = outdoorTemp.slice(-5, -4)
+  var outdoorTempInt3  = outdoorTemp.slice(-6, -5)
+
+  if (outdoorTempInt3 == "") {
+	  outdoorTempInt3  = "A";
+	  $('#wordclock div:is(#outdoorTemperatureInt3)').removeClass('out');
+  } else {
+	  $('#wordclock div:is(#outdoorTemperatureInt3)').addClass('out');
+  }
+
   if (outdoorTempInt2 == "") {
 	  outdoorTempInt2  = "K";
 	  $('#wordclock div:is(#outdoorTemperatureInt2)').removeClass('out');
@@ -121,6 +130,7 @@ function parseOutdoorXML(xml) {
   document.getElementById('outdoorTemperatureFrac').innerText = outdoorTempFrac;
   document.getElementById('outdoorTemperatureInt1').innerText = outdoorTempInt1;
   document.getElementById('outdoorTemperatureInt2').innerText = outdoorTempInt2;
+  document.getElementById('outdoorTemperatureInt3').innerText = outdoorTempInt3;
 }
 
 

@@ -69,26 +69,26 @@ body {
 
 .eva1 {
   color:              lightgreen;
-  letter-spacing:     13px;
-  padding-left:       115px;
+  letter-spacing:     -10px;
+  padding-left:       110px;
 }
 
 .eva2 {
   color:              lightgreen;
-  letter-spacing:     13px;
-  padding-left:       115px;
+  letter-spacing:     -6px;
+  padding-left:       150px;
 }
 
 .frank1 {
   color:              lightgreen;
-  letter-spacing:     13px;
-  padding-left:       197px;
+  letter-spacing:     11px;
+  padding-left:       199px;
 }
 
 .frank2 {
   color:              lightgreen;
-  letter-spacing:     -15px;
-  padding-left:       190px;
+  letter-spacing:     13px;
+  padding-left:       199px;
 }
 
 .heike1 {
@@ -99,20 +99,20 @@ body {
 
 .heike2 {
   color:              lightgreen;
-  letter-spacing:     13px;
-  padding-left:       197px;
+  letter-spacing:     -5px;
+  padding-left:       190px;
 }
 
 .hannah1 {
   color:              lightgreen;
-  letter-spacing:     13px;
-  padding-left:       240px;
+  letter-spacing:     -1px;
+  padding-left:       230px;
 }
 
 .hannah2 {
   color:              lightgreen;
   letter-spacing:     -11px;
-  padding-left:       230px;
+  padding-left:       228px;
 }
 
 .hello {
